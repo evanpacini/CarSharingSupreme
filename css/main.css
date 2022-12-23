@@ -1,9 +1,16 @@
-.header {
+body {
+    /* Have the footer at the bottom of the viewport, if the page is smaller than the viewport height. */
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header {
     background-color: #eee;
     padding: 2rem;
 }
 
-.header img {
+header img {
     width: 75%;
     margin: 2rem;
 }
