@@ -1,0 +1,13 @@
+.header {
+    background-color: #eee;
+    padding: 2rem;
+}
+
+.header img {
+    width: 75%;
+    margin: 2rem;
+}
+
+button[type="submit"] {
+    margin-bottom: 2em;
+}
