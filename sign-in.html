@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Car Sharing Supreme - Sign-in</title>
+    <title>CSS - Sign-in</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -56,14 +56,14 @@
             <form>
                 <!-- Email input -->
                 <div class="form-floating mb-3">
-                    <input type="email" id="LoginEmail" class="form-control" placeholder="name@example.com"/>
+                    <input type="email" id="LoginEmail" class="form-control" placeholder="name@example.com" required/>
                     <label for="LoginEmail">Email</label>
                     <div class="form-text">We'll never share your email with anyone else.</div>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-floating mb-3">
-                    <input type="password" id="LoginPassword" class="form-control" placeholder="Password"/>
+                    <input type="password" id="LoginPassword" class="form-control" placeholder="Password" required/>
                     <label for="LoginPassword">Password</label>
                 </div>
 
@@ -101,7 +101,7 @@
                         <div class="input-group">
                             <span class="input-group-text">@</span>
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="RegisterUsername" placeholder="Username">
+                                <input type="text" class="form-control" id="RegisterUsername" placeholder="Username" required>
                                 <label for="RegisterUsername">Username</label>
                             </div>
                         </div>
@@ -109,13 +109,13 @@
 
                     <!-- Email input -->
                     <div class="form-floating mb-3">
-                        <input type="email" id="RegisterEmail" class="form-control" placeholder="name@example.com"/>
+                        <input type="email" id="RegisterEmail" class="form-control" placeholder="name@example.com" required/>
                         <label for="RegisterEmail">Email</label>
                     </div>
 
                     <!-- Password input -->
                     <div class="form-floating mb-3">
-                        <input type="password" id="RegisterPassword" class="form-control" placeholder="Password"/>
+                        <input type="password" id="RegisterPassword" class="form-control" placeholder="Password" required/>
                         <label for="RegisterPassword">Password</label>
                     </div>
                 </fieldset>
@@ -128,13 +128,13 @@
                     <div class="row g-2 mb-3">
                         <div class="col-md">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="RegisterFirstName" placeholder="John">
+                                <input type="text" class="form-control" id="RegisterFirstName" placeholder="John" required>
                                 <label for="RegisterFirstName">First Name</label>
                             </div>
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="RegisterLastName" placeholder="Doe">
+                                <input type="text" class="form-control" id="RegisterLastName" placeholder="Doe" required>
                                 <label for="RegisterLastName">Last Name</label>
                             </div>
                         </div>
@@ -144,7 +144,7 @@
                     <div class="row g-2 mb-3">
                         <div class="col-md">
                             <div class="form-floating">
-                                <select class="form-select" id="RegisterGender">
+                                <select class="form-select" id="RegisterGender" required>
                                     <option selected>Other</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
@@ -155,7 +155,7 @@
                         </div>
                         <div class="col-md">
                             <div class="form-floating">
-                                <select class="form-select" id="RegisterLanguage">
+                                <select class="form-select" id="RegisterLanguage" required>
                                     <option>Afrikaans</option>
                                     <option>Albanian</option>
                                     <option>Amharic</option>
@@ -260,13 +260,13 @@
                     </div>
                     <!-- Date of birth input -->
                     <div class="form-floating mb-3">
-                        <input type="date" id="RegisterDateOfBirth" class="form-control" placeholder="Date of birth"/>
+                        <input type="date" id="RegisterDateOfBirth" class="form-control" placeholder="Date of birth" required/>
                         <label for="RegisterDateOfBirth">Date of birth</label>
                     </div>
 
                     <!-- Address input -->
                     <div class="form-floating mb-3">
-                        <input type="text" id="RegisterAddress" class="form-control" placeholder="Address"/>
+                        <input type="text" id="RegisterAddress" class="form-control" placeholder="Address" required/>
                         <label for="RegisterAddress">Address</label>
                     </div>
 
@@ -274,7 +274,7 @@
                     <div class="row g-2 mb-3">
                         <div class="col-md">
                             <div class="form-floating">
-                                <select class="form-select" id="RegisterCountry">
+                                <select class="form-select" id="RegisterCountry" required>
                                     <option value="Afghanistan">Afghanistan</option>
                                     <option value="Åland Islands">Åland Islands</option>
                                     <option value="Albania">Albania</option>
@@ -543,7 +543,7 @@
                         <div class="col-md">
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="RegisterZipCode"
-                                       placeholder="1234AB">
+                                       placeholder="1234AB" required>
                                 <label for="RegisterZipCode">Zip Code</label>
                             </div>
                         </div>
@@ -551,7 +551,7 @@
 
                     <!-- Phone number input -->
                     <div class="form-floating mb-3">
-                        <input type="text" id="RegisterPhoneNumber" class="form-control" placeholder="123456789"/>
+                        <input type="text" id="RegisterPhoneNumber" class="form-control" placeholder="123456789" required/>
                         <label for="RegisterPhoneNumber">Phone number</label>
                     </div>
                 </fieldset>
@@ -562,20 +562,20 @@
                     <legend>Driver license</legend>
                     <!-- Phone number input -->
                     <div class="form-floating mb-3">
-                        <input type="text" id="RegisterLicenseType" class="form-control" placeholder="A"/>
+                        <input type="text" id="RegisterLicenseType" class="form-control" placeholder="A" required/>
                         <label for="RegisterLicenseType">License Type</label>
                     </div>
                     <div class="mb-3">
                         <label for="RegisterLicense" class="form-label">Upload a picture of your driver's
                             license</label>
-                        <input class="form-control" type="file" id="RegisterLicense">
+                        <input class="form-control" type="file" id="RegisterLicense" required>
                     </div>
                 </fieldset>
 
 
                 <!-- Checkbox -->
                 <div class="form-check mb-4">
-                    <input class="form-check-input me-2" type="checkbox" id="RegisterTerms"/>
+                    <input class="form-check-input me-2" type="checkbox" id="RegisterTerms" required/>
                     <label class="form-check-label" for="RegisterTerms">I have read and agree to the <a
                             href="terms-and-conditions.html" target="_blank">terms
                         <i class="bi bi-box-arrow-up-right"></i></a></label>
