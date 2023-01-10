@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+      async
+      defer
+    ></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <script>
+      var map;
+      var startMarker;
+      var endMarker;
+      var directionsService;
+      var directionsRenderer;
+      var form = document.getElementById("formId");
+      form.addEventListener("submit", handleFormSubmit);
+      var inputStart = document.getElementById("start");
+      var inputEnd = document.getElementById("end");
+      var autocompleteStart = new google.maps.places.Autocomplete(inputStart);
+      var autocompleteEnd = new google.maps.places.Autocomplete(inputEnd);
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 7
+        });
+        directionsService = new google.maps.DirectionsService();
+        directionsRenderer = new google.maps.DirectionsRenderer();
+        directionsRenderer.setMap(map);
+      }
+
+      // Function to handle form submission
+      function handleFormSubmit(event) {
+        event.preventDefault();
+
+        var start = document.getElementById("start").value;
+        var end = document.getElementById("end").value;
+        // Geocode the start and end locations
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ address: start }, function (results, status) {
+          if (status === "OK") {
+            startMarker = new google.maps.Marker({
+              position: results[0].geometry.location,
+              map: map
+            });
+            map.setCenter(results[0].geometry.location);
+            geocoder.geocode({ address: end }, function (results, status) {
+              if (status === "OK") {
+                endMarker = new google.maps.Marker({
+                  position: results[0].geometry.location,
+                  map: map
+                });
+                // Get the route between the two locations
+                var request = {
+                  origin: startMarker.getPosition(),
+                  destination: endMarker.getPosition(),
+                  travelMode: "DRIVING"
+                };
+                directionsService.route(request, function (result, status) {
+                  if (status === "OK") {
+                    directionsRenderer.setDirections(result);
+                  }
+                });
+              }
+            });
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <form>
+      <label for="start">Start:</label>
+      <input type="text" id="start" name="start" />
+      <br />
+      <label for="end">End:</label>
+      <input type="text" id="end" name="end" />
+      <br />
+      <button type="submit">Go</button>
+    </form>
+  </body>
+</html>
