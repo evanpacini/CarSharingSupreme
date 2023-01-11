@@ -11,7 +11,7 @@
     --primary-variant:#001064;
     --on-primary:whitesmoke;
     --secondary: #8e24aa;
-    --secondary-variant:#7b1fa2;
+    --secondary-variant:#4a148c;
     --on-secondary:whitesmoke;
     --background: white;
     --on-background:black;
@@ -92,6 +92,7 @@ footer .github {
     column-gap: 16px;
     padding: 1vh 0 1vh 0;
 }
+
 footer svg {
     height: 1em;
     width: 1em;
