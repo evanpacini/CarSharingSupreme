@@ -2,245 +2,135 @@
 <html lang="en">
   <head>
     <title>Car Sharing Supreme</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/share-and-search.css" />
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="./"
-          ><h1 class="display-5">
-            Car Sharing Supreme <strong>CSS</strong>
-          </h1></a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-link" href="./">Home</a>
-            <a class="nav-link active" href="./share-and-search.html"
-              >Share and Search</a
-            >
-            <a class="nav-link" href="./sign-in.html">Sign In</a>
-            <a class="nav-link" href="./terms-and-conditions.html"
-              >Terms and Conditions</a
-            >
-          </div>
-        </div>
-      </div>
+    <nav class="navbar">
+      <a class="navbar-brand" href="./"
+        >Car Sharing Supreme <strong>CSS</strong></a
+      >
+      <a href="./">Home</a>
+      <a class="active" href="./share-and-search.html">Share and Search</a>
+      <a href="./sign-in.html">Sign In</a>
+      <a href="./terms-and-conditions.html">Terms and Conditions</a>
     </nav>
     <!-- Navbar -->
 
-    <div class="d-flex">
-      <section class="container mt-5 w-50 d-flex flex-column">
-        <!-- Start / end form -->
-        <section>
-          <h1>Search for trips</h1>
-          <form>
-            <!-- Origin input -->
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                id="OriginInput"
-                class="form-control"
-                placeholder="Eindhoven"
-                required
-              />
-              <label for="OriginInput">Origin</label>
+    <section class="search-container">
+      <h1>Search for trips</h1>
+      <div class="form-and-map-container">
+        <section class="form-results-container">
+          <!-- Start / end form -->
+          <section class="form">
+            <form>
+              <!-- Origin input -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  id="OriginInput"
+                  class="form-control"
+                  placeholder="Eindhoven"
+                  required
+                />
+                <label for="OriginInput">Origin</label>
+              </div>
+              <!-- Destination input -->
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  id="DestinationInput"
+                  class="form-control"
+                  placeholder="Delft"
+                  required
+                />
+                <label for="DestinationInput">Destination</label>
+              </div>
+              <button type="submit" class="btn btn-dark btn-block mb-3">
+                Search
+              </button>
+            </form>
+          </section>
+          <!-- Start / end form -->
+          <!-- Result list -->
+          <section class="results">
+            <h2>Results</h2>
+            <div class="accordion">
+              <button onclick="myFunction('accordion1')">
+                <p>Klaas Pistolet (2km)</p>
+              </button>
+              <div id="accordion1" class="content hidden">
+                <p>Some text..</p>
+              </div>
+              <button onclick="myFunction('accordion2')">
+                <p>John Pistol (5km)</p>
+              </button>
+              <div id="accordion2" class="content hidden">
+                <p>Some other text..</p>
+              </div>
             </div>
-            <!-- Destination input -->
-            <div class="form-floating mb-3">
-              <input
-                type="text"
-                id="DestinationInput"
-                class="form-control"
-                placeholder="Delft"
-                required
-              />
-              <label for="DestinationInput">Destination</label>
-            </div>
-            <button type="submit" class="btn btn-dark btn-block mb-3">
-              Search
-            </button>
-          </form>
+          </section>
+          <!-- Result list -->
         </section>
-        <!-- Start / end form -->
-        <!-- Result list -->
-        <section class="mb-5">
-          <h2>Results</h2>
-          <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  Accordion Item #1
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <strong>This is the first item's accordion body.</strong> It
-                  is shown by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Accordion Item #2
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingTwo"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
-                </div>
-              </div>
-            </div>
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                  class="accordion-button collapsed"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Accordion Item #3
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingThree"
-                data-bs-parent="#accordionExample"
-              >
-                <div class="accordion-body">
-                  <strong>This is the third item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- Result list -->
-      </section>
 
-      <!-- Map -->
-      <section class="container mt-5 w-50">
-        <iframe
-          class="w-100"
-          src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d316398.8216594251!2d4.638412118410801!3d51.717197800651796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x47c6d91b5579c39f%3A0xf39ad2648164b998!2sEindhoven!3m2!1d51.423142299999995!2d5.4622896999999995!4m5!1s0x47c5b5c3515f58fd%3A0x89b05ca3c54bd43d!2sDelft!3m2!1d52.011576899999994!2d4.3570677!5e0!3m2!1sen!2snl!4v1673349602483!5m2!1sen!2snl"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </section>
-    </div>
+        <!-- Map -->
+        <section class="map-container">
+          <iframe
+            class="w-100"
+            src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d316398.8216594251!2d4.638412118410801!3d51.717197800651796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x47c6d91b5579c39f%3A0xf39ad2648164b998!2sEindhoven!3m2!1d51.423142299999995!2d5.4622896999999995!4m5!1s0x47c5b5c3515f58fd%3A0x89b05ca3c54bd43d!2sDelft!3m2!1d52.011576899999994!2d4.3570677!5e0!3m2!1sen!2snl!4v1673349602483!5m2!1sen!2snl"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </section>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-center text-white">
-      <!-- Grid container -->
-      <div class="container p-4 pb-0">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Kasper -->
-          <a
-            class="btn btn-dark btn-floating m-1"
-            href="https://github.com/kaspervanm"
-            role="button"
-            ><i class="bi bi-github"></i
-          ></a>
-          <!-- Evan -->
-          <a
-            class="btn btn-dark btn-floating m-1"
-            href="https://github.com/evanpacini"
-            role="button"
-            ><i class="bi bi-github"></i
-          ></a>
-        </section>
-        <!-- Section: Social media -->
+    <footer>
+      <!-- Github -->
+      <div class="github">
+        <!-- Kasper -->
+        <a href="https://github.com/kaspervanm"
+          ><svg xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            /></svg
+        ></a>
+        <!-- Evan -->
+        <a href="https://github.com/evanpacini"
+          ><svg xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            />
+          </svg>
+        </a>
       </div>
-      <!-- Grid container -->
+      <!-- Github -->
 
       <!-- Copyright -->
-      <div class="text-center p-3 copyright">
+      <div class="copyright">
         &copy; 2022 Espersoft Inc. All rights reserved
       </div>
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
+
+    <script>
+      function myFunction(id) {
+        var x = document.getElementById(id);
+        console.log(x.className.indexOf("hidden"));
+        console.log(x.className.indexOf("hidden") == -1);
+        if (x.className.indexOf("hidden") == -1) {
+          console.log("INNN");
+          x.className += " hidden";
+          x.previousElementSibling.className =
+            x.previousElementSibling.className.replace(" selected", "");
+        } else {
+          x.className = x.className.replace(" hidden", "");
+          x.previousElementSibling.className += " selected";
+        }
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,71 @@
+@import url('./main.css');
+
+.search-container {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-and-map-container {
+    display: flex;
+    column-gap: 2em;
+}
+
+.form-and-map-container > section {
+    flex:1;
+}
+
+.map-container {
+    display: flex;
+    min-height: 450px;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Responsive layout */
+@media (max-width: 1000px) {
+    .form-and-map-container {
+        flex-direction: column-reverse;
+        align-items: left;
+        row-gap: 2em;
+    }
+
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion button {
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border: none;
+    padding: 1em 0 1em 0;
+    text-align: left;
+}
+
+.accordion button p {
+    margin-left: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+.accordion .selected {
+    background-color: var(--secondary);
+    color: var(--on-secondary);
+}
+
+.accordion .content {
+    margin-left: 2em;
+}
+
+iframe {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 600px;
+}
