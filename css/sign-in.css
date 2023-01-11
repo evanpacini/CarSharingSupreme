@@ -1,0 +1,169 @@
+@import url('./main.css');
+
+.sign-in {
+    height: 100%;
+    width: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/mountain-roads.jpeg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.form-box {
+    width: 33vw;
+    height: 70vh;
+    position: relative;
+    margin: 2% auto;
+    color: var(--on-surface);
+    /* background-color: yellow; */
+    /* overflow: hidden; */
+}
+
+/* Nav buttons */
+.button-box {
+    width: 21vw;
+    margin: 5% auto;
+    position: relative;
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    padding: 3% 5%;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    width: 49%;
+}
+
+#login-btn {
+    color: var(--on-secondary);
+}
+
+#register-btn {
+    color: var(--on-surface);
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 11vw;
+    height: 100%;
+    background-color: var(--secondary);
+    border-radius: 30px;
+    transition: .5s;
+}
+
+/* Nav buttons */
+
+/* Login and register forms */
+#login {
+    width: 25vw;
+    position: absolute;
+    top: 4vw;
+    left: 3vw;
+}
+
+#register {
+    width: 50vw;
+    position: absolute;
+    top: 4vw;
+    left: 40vw;
+}
+
+form {
+    transition: .5s;
+    padding: 2vw;
+    border-radius: 5px;
+    background-color: var(--surface);
+}
+
+/* Floating label inputs */
+.input-field {
+    width: 100%;
+    color: var(--on-surface);
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.275em;
+}
+
+.floating-label{
+    position: relative;
+}
+
+.floating-label > .input-field {
+    height: calc(3.5rem + 2px);
+    line-height: 1.25;
+    padding: 1rem 0.75rem;
+}
+
+.floating-label > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.floating-label > .input-field::placeholder{
+    opacity: 0;
+}
+
+.floating-label > .input-field:focus,
+.floating-label > .input-field:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+.floating-label > .input-field:focus ~ label,
+.floating-label > .input-field:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  color: var(--secondary);
+}
+/* Floating label inputs */
+
+
+#ext-link {
+    height: 1em;
+    width: 1em;
+    fill: var(--on-surface);
+}
+
+.remember {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 1em;
+    align-items: center;
+    font-size: 0.8em;
+    border: 0;
+}
+
+.remember input {
+    width: 1em;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 0.8em 3em;
+    cursor: pointer;
+    display: block;
+    margin: 1.5em;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-variant);
+}
