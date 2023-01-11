@@ -1,24 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;700&display=swap');
+
+@font-face {
+    font-family: 'Esper';
+    font-display: block;
+    src: url(./fonts/Esper-Regular.ttf) format('ttf');
+}
+
+:root {
+    --primary: #283593;
+    --primary-variant:#001064;
+    --on-primary:whitesmoke;
+    --secondary: #8e24aa;
+    --secondary-variant:#7b1fa2;
+    --on-secondary:whitesmoke;
+    --background: white;
+    --on-background:black;
+    --surface: whitesmoke;
+    --on-surface:black;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body {
     /* Have the footer at the bottom of the viewport, if the page is smaller than the viewport height. */
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    margin: 0;
+    color: var(--on-background);
+    background-color: var(--background);
+    font-family: Mukta, Arial, Helvetica, sans-serif;
 }
 
-header {
-    background-color: #eee;
-    padding: 2rem;
+.navbar {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1em;
+    font-weight: 200;
+    
+    padding: 1.5em 0 1.5em 0;
+    background-color: var(--primary);
+    color: var(--on-primary)
 }
 
-header img {
-    width: 75%;
-    margin: 2rem;
+.navbar .navbar-brand {
+    font-size: 2.5em;
+}
+.navbar a {
+    font-size: 1.2em;
+    color: inherit;
+    text-decoration: none;
 }
 
-.try-out-button {
+.active {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3.2em;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+h2 {
     font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 0;
 }
 
-.copyright {
-    background-color: rgba(0, 0, 0, 0.2);
+p {
+    font-size: 1em;
+    font-weight: 400;
+}
+
+footer {
+    margin-top: 5vh;
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--on-primary);
+}
+
+footer .github {
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+    padding: 1vh 0 1vh 0;
+}
+footer svg {
+    height: 1em;
+    width: 1em;
+    fill: var(--on-primary);
+}
+
+footer .copyright {
+    padding: 1em 0 1em 0;
+    background-color: var(--primary-variant);
 }
