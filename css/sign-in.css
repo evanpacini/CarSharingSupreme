@@ -18,28 +18,28 @@ footer {
     min-width: 355px;
     height: 80em;
     position: relative;
-    margin: 2% auto;
+    margin: 4% auto;
     color: var(--on-surface);
-    /* background-color: yellow; */
     overflow: hidden;
 }
 
 /* Nav buttons */
 .button-box {
     width: 75%;
-    margin: 5% auto;
+    margin: 0 auto;
     position: relative;
     border-radius: 30px;
 }
 
 .toggle-btn {
-    padding: 3% 5%;
+    padding: 0.5em 0;
     cursor: pointer;
     background: transparent;
     border: 0;
     outline: none;
     position: relative;
     width: 49%;
+    font: inherit;
 }
 
 #login-btn {
@@ -80,7 +80,7 @@ footer {
 
 form {
     transition: .5s;
-    padding: 2vw;
+    padding: 1.5em;
     border-radius: 5px;
     background-color: var(--surface);
 }
@@ -104,4 +104,9 @@ form {
 
 .remember input {
     width: 1em;
+}
+
+fieldset > p {
+    margin: 0 0 0.1em 0;
+    line-height: 1em;
 }

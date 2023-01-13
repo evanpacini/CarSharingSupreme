@@ -129,7 +129,11 @@ fieldset legend {
     font-weight: 700;
 }
 
-.input-field {
+.floating-label{
+    position: relative;
+}
+
+.floating-label > .input-field {
     width: 100%;
     height: 2em;
     color: var(--on-surface);
@@ -138,16 +142,11 @@ fieldset legend {
     border: none;
     border-bottom: 1px solid #ccc;
     margin-bottom: 0.275em;
-}
+    height: calc(3.8em + 2px);
+    /* line-height: 1; */
+    padding: 1em 0.75em;
 
-.floating-label{
-    position: relative;
-}
-
-.floating-label > .input-field {
-    height: calc(3.5rem + 2px);
-    line-height: 1.25;
-    padding: 1rem 0.75rem;
+    font: inherit;
 }
 
 .floating-label > label {
@@ -155,7 +154,7 @@ fieldset legend {
     top: 0;
     left: 0;
     height: 100%;
-    padding: 1rem 0.75rem;
+    padding: 1em 0.75em;
     pointer-events: none;
     border: 1px solid transparent;
     transform-origin: 0 0;
@@ -168,13 +167,19 @@ fieldset legend {
 
 .floating-label > .input-field:focus,
 .floating-label > .input-field:not(:placeholder-shown) {
-  padding-top: 1.625rem;
-  padding-bottom: 0.625rem;
+  padding-top: 1.625em;
+  padding-bottom: 0.625em;
 }
 .floating-label > .input-field:focus ~ label,
 .floating-label > .input-field:not(:placeholder-shown) ~ label {
-  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  transform: scale(0.85) translateY(-0.5em) translateX(0.15em);
   color: var(--secondary);
+}
+
+.floating-label > .input-field:required ~ label::after {
+    content: "*";
+    color: var(--secondary-variant);
+    margin-left: 0.25em;
 }
 /* Floating label inputs */
 
