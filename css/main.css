@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;400;700&display=swap');
 
-@font-face {
-    font-family: 'Esper';
-    font-display: block;
-    src: url(./fonts/Esper-Regular.ttf) format('ttf');
-}
-
 :root {
     --primary: #283593;
     --primary-variant:#001064;
