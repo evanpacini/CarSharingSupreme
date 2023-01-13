@@ -55,6 +55,7 @@
             <div class="accordion">
               <button onclick="myFunction('accordion1')">
                 <p>Klaas Pistolet (2km)</p>
+                <div></div>
               </button>
               <div id="accordion1" class="content hidden">
                 <p>
@@ -82,8 +83,121 @@
               </div>
               <button onclick="myFunction('accordion2')">
                 <p>John Pistol (5km)</p>
+                <div></div>
               </button>
               <div id="accordion2" class="content hidden">
+                <p>
+                  John Pistol is sharing his ride to
+                  <span class="important destination">Den Haag</span>.
+                </p>
+                <p>
+                  This user is leaving from
+                  <a
+                    href="https://www.google.com/maps/search/Ouverture 228, 5629 PX Eindhoven"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="important origin ext-link"
+                    >Ouverture 228, 5629 PX Eindhoven</a
+                  >.
+                </p>
+                <p>
+                  <span class="important capacity">1 out of 2</span> other
+                  people are already joining him.
+                </p>
+                <p>
+                  Departure:
+                  <span class="important departure">08:00h 15 jan 2023</span>.
+                </p>
+              </div>
+              <button onclick="myFunction('accordion3')">
+                <p>Klaas Pistolet (2km)</p>
+                <div></div>
+              </button>
+              <div id="accordion3" class="content hidden">
+                <p>
+                  Klaas Pistolet is sharing his ride to
+                  <span class="important destination">Den Haag</span>.
+                </p>
+                <p>
+                  This user is leaving from
+                  <a
+                    href="https://www.google.com/maps/search/Schimmelt 50, 5611 ZX Eindhoven"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="important origin ext-link"
+                    >Schimmelt 50, 5611 ZX Eindhoven</a
+                  >.
+                </p>
+                <p>
+                  <span class="important capacity">2 out of 5</span> other
+                  people are already joining him.
+                </p>
+                <p>
+                  Departure:
+                  <span class="important departure">10:00h 15 jan 2023</span>.
+                </p>
+              </div>
+              <button onclick="myFunction('accordion4')">
+                <p>John Pistol (5km)</p>
+                <div></div>
+              </button>
+              <div id="accordion4" class="content hidden">
+                <p>
+                  John Pistol is sharing his ride to
+                  <span class="important destination">Den Haag</span>.
+                </p>
+                <p>
+                  This user is leaving from
+                  <a
+                    href="https://www.google.com/maps/search/Ouverture 228, 5629 PX Eindhoven"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="important origin ext-link"
+                    >Ouverture 228, 5629 PX Eindhoven</a
+                  >.
+                </p>
+                <p>
+                  <span class="important capacity">1 out of 2</span> other
+                  people are already joining him.
+                </p>
+                <p>
+                  Departure:
+                  <span class="important departure">08:00h 15 jan 2023</span>.
+                </p>
+              </div>
+              <button onclick="myFunction('accordion5')">
+                <p>Klaas Pistolet (2km)</p>
+                <div></div>
+              </button>
+              <div id="accordion5" class="content hidden">
+                <p>
+                  Klaas Pistolet is sharing his ride to
+                  <span class="important destination">Den Haag</span>.
+                </p>
+                <p>
+                  This user is leaving from
+                  <a
+                    href="https://www.google.com/maps/search/Schimmelt 50, 5611 ZX Eindhoven"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="important origin ext-link"
+                    >Schimmelt 50, 5611 ZX Eindhoven</a
+                  >.
+                </p>
+                <p>
+                  <span class="important capacity">2 out of 5</span> other
+                  people are already joining him.
+                </p>
+                <p>
+                  Departure:
+                  <span class="important departure">10:00h 15 jan 2023</span>.
+                </p>
+              </div>
+              <button onclick="myFunction('accordion6')">
+                <p>John Pistol (5km)</p>
+                <div></div>
+              </button>
+              <div id="accordion6" class="content hidden">
                 <p>
                   John Pistol is sharing his ride to
                   <span class="important destination">Den Haag</span>.
@@ -158,10 +272,7 @@
     <script>
       function myFunction(id) {
         var x = document.getElementById(id);
-        console.log(x.className.indexOf("hidden"));
-        console.log(x.className.indexOf("hidden") == -1);
         if (x.className.indexOf("hidden") == -1) {
-          console.log("INNN");
           x.className += " hidden";
           x.previousElementSibling.className =
             x.previousElementSibling.className.replace(" selected", "");

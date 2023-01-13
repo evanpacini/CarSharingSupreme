@@ -143,7 +143,6 @@ fieldset legend {
     border-bottom: 1px solid #ccc;
     margin-bottom: 0.275em;
     height: calc(3.8em + 2px);
-    /* line-height: 1; */
     padding: 1em 0.75em;
 
     font: inherit;
@@ -211,7 +210,6 @@ fieldset legend {
     content: "";
     margin-left: 0.5em;
     background-image: url(../images/external-link.svg);
-    background-size: 1em;
     height: 1em;
     width: 1em;
     fill: var(--on-surface);

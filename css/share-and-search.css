@@ -71,6 +71,28 @@
     color: var(--on-surface);
 }
 
+.accordion button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion button > div {
+    margin-right: 1em;
+}
+
+.accordion .selected > div::before {
+    background-image: url(../images/accordion-up.svg);
+}
+
+.accordion button > div::before {
+    display: inline-block;
+    content: "";
+    background-image: url(../images/accordion-down.svg);
+    height: 1em;
+    width: 1em;
+    fill: var(--on-surface);
+}
+
 .accordion .content {
     margin-left: 2em;
 }
@@ -80,5 +102,5 @@ iframe {
     width: 100%;
     height: 100%;
     max-width: 800px;
-    max-height: 800px;
+    max-height: 500px;
 }
