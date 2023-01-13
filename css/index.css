@@ -11,8 +11,8 @@ header .slogan {
     text-align: center;
     font-size: 2.8em;
     font-weight: 200;
-    margin: 0;
-    line-height: 1em;
+    line-height: 1.5;
+    margin: 0.4em 0 0.5em 0;
 }
 
 header a {
@@ -55,6 +55,7 @@ h1 {
     justify-content: center;
     align-items: stretch;
     gap: 5vh 2vw;
+    margin: 0 1em;
 }
   
 /* Responsive layout */
