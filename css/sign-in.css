@@ -7,7 +7,7 @@ footer {
 .sign-in {
     height: 100%;
     width: auto;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/mountain-roads.jpeg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)), url('../images/sign-in-image.png');
     background-position: center;
     background-size: cover;
     position: relative;
