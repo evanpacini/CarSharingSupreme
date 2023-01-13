@@ -3,6 +3,7 @@
   <head>
     <title>CSS - Sign-in</title>
     <link rel="stylesheet" href="css/sign-in.css" />
+    <script src="./js/sign-in.js" async defer></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -628,12 +629,9 @@
           </fieldset>
 
           <!-- Checkbox -->
-          <input type="checkbox" id="RegisterTerms" required />
-          <label for="RegisterTerms"
-            >I have read and agree to the
-            <a
-              href="terms-and-conditions.html"
-              target="_blank"
+          <input type="checkbox" id="RegisterTerms" req      <script>
+        
+          </script>
               rel="noopener noreferrer"
               class="ext-link"
               >term and conditions</a
@@ -643,29 +641,6 @@
         </form>
         <!-- Register form -->
       </div>
-
-      <script>
-        var loginForm = document.getElementById("login");
-        var registerForm = document.getElementById("register");
-        var buttonHighlight = document.getElementById("btn");
-        var loginBtn = document.getElementById("login-btn");
-        var registerBtn = document.getElementById("register-btn");
-
-        function register() {
-          loginForm.style.left = "-200%";
-          registerForm.style.left = "0vw";
-          buttonHighlight.style.left = "50%";
-          loginBtn.style.color = "var(--on-surface)";
-          registerBtn.style.color = "var(--on-primary)";
-        }
-        function login() {
-          loginForm.style.left = "0";
-          registerForm.style.left = "200%";
-          buttonHighlight.style.left = "0";
-          loginBtn.style.color = "var(--on-primary)";
-          registerBtn.style.color = "var(--on-surface)";
-        }
-      </script>
     </section>
 
     <!-- Footer -->
