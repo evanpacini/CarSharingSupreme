@@ -7,9 +7,7 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <a class="navbar-brand" href="./"
-        >Car Sharing Supreme <strong>CSS</strong></a
-      >
+      <a class="navbar-brand" href="./">CSS</a>
       <a href="./">Home</a>
       <a href="./share-and-search.html">Share and Search</a>
       <a class="active" href="./sign-in.html">Sign In</a>
@@ -74,10 +72,6 @@
               Remember me
             </label>
           </div>
-
-          <!-- Simple link -->
-          <a href="#">Forgot password?</a>
-
           <button type="submit" class="submit-btn">Log In</button>
         </form>
         <!-- Login form -->
@@ -160,6 +154,7 @@
               <option value="Female">Female</option>
               <option value="Non-binary">Non-binary</option>
             </select>
+            <br />
             <label for="RegisterLanguage">Language</label>
             <select class="form-select" id="RegisterLanguage" required>
               <option>Afrikaans</option>
@@ -641,19 +636,14 @@
           <input type="checkbox" id="RegisterTerms" required />
           <label for="RegisterTerms"
             >I have read and agree to the
-            <a href="terms-and-conditions.html" target="_blank"
-              >terms
-              <svg id="ext-link" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fill-rule="evenodd"
-                  d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                />
-                <path
-                  fill-rule="evenodd"
-                  d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                />
-              </svg> </a
-          ></label>
+            <a
+              href="terms-and-conditions.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="ext-link"
+              >term and conditions</a
+            ></label
+          >
           <button type="submit" class="submit-btn">Register</button>
         </form>
         <!-- Register form -->
@@ -667,15 +657,15 @@
         var registerBtn = document.getElementById("register-btn");
 
         function register() {
-          loginForm.style.left = "-37vw";
-          registerForm.style.left = "3vw";
-          buttonHighlight.style.left = "11vw";
+          loginForm.style.left = "-200%";
+          registerForm.style.left = "0vw";
+          buttonHighlight.style.left = "50%";
           loginBtn.style.color = "var(--on-surface)";
           registerBtn.style.color = "var(--on-primary)";
         }
         function login() {
-          loginForm.style.left = "3vw";
-          registerForm.style.left = "40vw";
+          loginForm.style.left = "0";
+          registerForm.style.left = "200%";
           buttonHighlight.style.left = "0";
           loginBtn.style.color = "var(--on-primary)";
           registerBtn.style.color = "var(--on-surface)";

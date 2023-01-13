@@ -7,9 +7,7 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <a class="navbar-brand" href="./"
-        >Car Sharing Supreme <strong>CSS</strong></a
-      >
+      <a class="navbar-brand" href="./">CSS</a>
       <a href="./">Home</a>
       <a class="active" href="./share-and-search.html">Share and Search</a>
       <a href="./sign-in.html">Sign In</a>
@@ -17,38 +15,37 @@
     </nav>
     <!-- Navbar -->
 
-    <section class="search-container">
+    <main class="search-container">
       <h1>Search for trips</h1>
       <div class="form-and-map-container">
         <section class="form-results-container">
           <!-- Start / end form -->
           <section class="form">
+            <h2 style="margin-top: 0">Trip details</h2>
             <form>
               <!-- Origin input -->
-              <div class="form-floating mb-3">
+              <div class="floating-label">
                 <input
                   type="text"
                   id="OriginInput"
-                  class="form-control"
+                  class="input-field"
                   placeholder="Eindhoven"
                   required
                 />
                 <label for="OriginInput">Origin</label>
               </div>
               <!-- Destination input -->
-              <div class="form-floating mb-3">
+              <div class="floating-label">
                 <input
                   type="text"
                   id="DestinationInput"
-                  class="form-control"
+                  class="input-field"
                   placeholder="Delft"
                   required
                 />
                 <label for="DestinationInput">Destination</label>
               </div>
-              <button type="submit" class="btn btn-dark btn-block mb-3">
-                Search
-              </button>
+              <button type="submit" class="submit-btn">Search</button>
             </form>
           </section>
           <!-- Start / end form -->
@@ -60,13 +57,55 @@
                 <p>Klaas Pistolet (2km)</p>
               </button>
               <div id="accordion1" class="content hidden">
-                <p>Some text..</p>
+                <p>
+                  Klaas Pistolet is sharing his ride to
+                  <span class="important destination">Den Haag</span>.
+                </p>
+                <p>
+                  This user is leaving from
+                  <a
+                    href="https://www.google.com/maps/search/Schimmelt 50, 5611 ZX Eindhoven"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="important origin ext-link"
+                    >Schimmelt 50, 5611 ZX Eindhoven</a
+                  >.
+                </p>
+                <p>
+                  <span class="important capacity">2 out of 5</span> other
+                  people are already joining him.
+                </p>
+                <p>
+                  Departure:
+                  <span class="important departure">10:00h 15 jan 2023</span>.
+                </p>
               </div>
               <button onclick="myFunction('accordion2')">
                 <p>John Pistol (5km)</p>
               </button>
               <div id="accordion2" class="content hidden">
-                <p>Some other text..</p>
+                <p>
+                  John Pistol is sharing his ride to
+                  <span class="important destination">Den Haag</span>.
+                </p>
+                <p>
+                  This user is leaving from
+                  <a
+                    href="https://www.google.com/maps/search/Ouverture 228, 5629 PX Eindhoven"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="important origin ext-link"
+                    >Ouverture 228, 5629 PX Eindhoven</a
+                  >.
+                </p>
+                <p>
+                  <span class="important capacity">1 out of 2</span> other
+                  people are already joining him.
+                </p>
+                <p>
+                  Departure:
+                  <span class="important departure">08:00h 15 jan 2023</span>.
+                </p>
               </div>
             </div>
           </section>
@@ -84,7 +123,7 @@
           ></iframe>
         </section>
       </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer>

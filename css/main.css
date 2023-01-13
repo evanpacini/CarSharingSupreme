@@ -30,7 +30,6 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    margin: 0;
     color: var(--on-background);
     background-color: var(--background);
     font-family: Mukta, Arial, Helvetica, sans-serif;
@@ -51,7 +50,21 @@ body {
 
 .navbar .navbar-brand {
     font-size: 2.5em;
+    font-weight: 700;
 }
+
+.navbar .navbar-brand:before {
+    content: "Car Sharing Supreme ";
+    font-weight: 200;
+}
+
+@media (max-width: 870px) {
+    .navbar .navbar-brand:before {
+        content: "";
+    }
+
+}
+
 .navbar a {
     font-size: 1.2em;
     color: inherit;
@@ -65,18 +78,19 @@ body {
 h1 {
     font-size: 3.2em;
     font-weight: 200;
-    margin-bottom: 0;
+    margin-top: 0.5em;
 }
 
 h2 {
     font-size: 2em;
     font-weight: 700;
-    margin-bottom: 0;
+    margin-top: 0.5em;
 }
 
 p {
     font-size: 1em;
     font-weight: 400;
+    margin: 0.1em 0 0.1em 0;
 }
 
 footer {
@@ -102,4 +116,110 @@ footer svg {
 footer .copyright {
     padding: 1em 0 1em 0;
     background-color: var(--primary-variant);
+}
+
+/* Floating label inputs */
+fieldset {
+    border: none;
+    width: 100%;
+}
+
+fieldset legend {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.input-field {
+    width: 100%;
+    height: 2em;
+    color: var(--on-surface);
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0.275em;
+}
+
+.floating-label{
+    position: relative;
+}
+
+.floating-label > .input-field {
+    height: calc(3.5rem + 2px);
+    line-height: 1.25;
+    padding: 1rem 0.75rem;
+}
+
+.floating-label > label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.floating-label > .input-field::placeholder{
+    opacity: 0;
+}
+
+.floating-label > .input-field:focus,
+.floating-label > .input-field:not(:placeholder-shown) {
+  padding-top: 1.625rem;
+  padding-bottom: 0.625rem;
+}
+.floating-label > .input-field:focus ~ label,
+.floating-label > .input-field:not(:placeholder-shown) ~ label {
+  transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+  color: var(--secondary);
+}
+/* Floating label inputs */
+
+.submit-btn {
+    width: 85%;
+    padding: 0.8em 3em;
+    cursor: pointer;
+    display: block;
+    margin: 1.5em;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-variant);
+}
+
+
+/* External links */
+.ext-link {
+    text-decoration: none;
+}
+
+.ext-link::after {
+    display: inline-block;
+    content: "";
+    margin-left: 0.5em;
+    background-image: url(../images/external-link.svg);
+    background-size: 1em;
+    height: 1em;
+    width: 1em;
+    fill: var(--on-surface);
+}
+
+.ext-link:link {
+    color: var(--secondary);
+}
+.ext-link:visited, .ext-link:hover, .ext-link:active{
+    color: var(--secondary-variant)
+}
+/* External links */
+
+input[type="checkbox"] {
+    accent-color: var(--secondary);
 }
