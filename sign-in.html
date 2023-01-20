@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="./css/sign-in.css" />
     <script src="./js/sign-in.js" async defer></script>
   </head>
-  <body>
+  <body onclick="incClicks()">
     <!-- Navbar -->
     <nav class="navbar">
       <a class="navbar-brand" href="./">CSS</a>
@@ -18,6 +18,8 @@
 
     <!-- Sign-in section -->
     <section class="sign-in">
+      <!-- This is where the behavioural tracking data will be displayed -->
+      <pre id="tracking-data"></pre>
       <div class="form-box">
         <div class="button-box">
           <div id="btn"></div>
@@ -39,13 +41,14 @@
           </button>
         </div>
         <!-- Login form -->
-        <form id="login">
+        <form id="login" action="javascript:void(0);">
           <div class="floating-label">
             <input
               type="email"
               id="LoginEmail"
-              class="input-field"
+              class="input-field count-characters"
               placeholder="Email"
+              onkeydown="incKeystrokes()"
               required
             />
             <label for="LoginEmail">Email</label>
@@ -54,8 +57,9 @@
             <input
               type="password"
               id="LoginPassword"
-              class="input-field"
+              class="input-field count-characters"
               placeholder="Password"
+              onkeydown="incKeystrokes()"
               required
             />
             <label for="LoginPassword">Password</label>
@@ -78,7 +82,8 @@
         <!-- Login form -->
 
         <!-- Register form -->
-        <form id="register">
+        <!-- Prevent form from reloading page -->
+        <form id="register" action="javascript:void(0);">
           <!-- Login details -->
           <fieldset>
             <legend>Login details</legend>
@@ -86,9 +91,10 @@
             <div class="floating-label">
               <input
                 type="text"
-                class="input-field"
+                class="input-field count-characters"
                 id="RegisterUsername"
                 placeholder="Username"
+                onkeydown="incKeystrokes()"
                 required
               />
               <label for="RegisterUsername">Username</label>
@@ -99,8 +105,9 @@
               <input
                 type="email"
                 id="RegisterEmail"
-                class="input-field"
+                class="input-field count-characters"
                 placeholder="name@example.com"
+                onkeydown="incKeystrokes()"
                 required
               />
               <label for="RegisterEmail">Email</label>
@@ -111,8 +118,9 @@
               <input
                 type="password"
                 id="RegisterPassword"
-                class="input-field"
+                class="input-field count-characters"
                 placeholder="Password"
+                onkeydown="incKeystrokes()"
                 required
               />
               <label for="RegisterPassword">Password</label>
@@ -128,9 +136,10 @@
               <div class="floating-label">
                 <input
                   type="text"
-                  class="input-field"
+                  class="input-field count-characters"
                   id="RegisterFirstName"
                   placeholder="John"
+                  onkeydown="incKeystrokes()"
                   required
                 />
                 <label for="RegisterFirstName">First Name</label>
@@ -138,9 +147,10 @@
               <div class="floating-label">
                 <input
                   type="text"
-                  class="input-field"
+                  class="input-field count-characters"
                   id="RegisterLastName"
                   placeholder="Doe"
+                  onkeydown="incKeystrokes()"
                   required
                 />
                 <label for="RegisterLastName">Last Name</label>
@@ -263,6 +273,7 @@
                 id="RegisterDateOfBirth"
                 class="input-field"
                 placeholder="Date of birth"
+                onkeydown="incKeystrokes()"
                 required
               />
               <label for="RegisterDateOfBirth">Date of birth</label>
@@ -273,8 +284,9 @@
               <input
                 type="text"
                 id="RegisterAddress"
-                class="input-field"
+                class="input-field count-characters"
                 placeholder="Address"
+                onkeydown="incKeystrokes()"
                 required
               />
               <label for="RegisterAddress">Address</label>
@@ -585,9 +597,10 @@
             <div class="floating-label">
               <input
                 type="text"
-                class="input-field"
+                class="input-field count-characters"
                 id="RegisterZipCode"
                 placeholder="1234AB"
+                onkeydown="incKeystrokes()"
                 required
               />
               <label for="RegisterZipCode">Zip Code</label>
@@ -598,8 +611,9 @@
               <input
                 type="text"
                 id="RegisterPhoneNumber"
-                class="input-field"
+                class="input-field count-characters"
                 placeholder="123456789"
+                onkeydown="incKeystrokes()"
                 required
               />
               <label for="RegisterPhoneNumber">Phone number</label>
@@ -616,8 +630,9 @@
               <input
                 type="text"
                 id="RegisterLicenseType"
-                class="input-field"
+                class="input-field count-characters"
                 placeholder="A"
+                onkeydown="incKeystrokes()"
               />
               <label for="RegisterLicenseType">License Type</label>
             </div>
@@ -629,14 +644,20 @@
           </fieldset>
 
           <!-- Checkbox -->
-          <input type="checkbox" id="RegisterTerms" required/>
-          <label for="RegisterTerms">I have read and agree to the <a href="./terms-and-conditions.html" target="_blank"
+          <input type="checkbox" id="RegisterTerms" required />
+          <label for="RegisterTerms"
+            >I have read and agree to the
+            <a
+              href="./terms-and-conditions.html"
+              target="_blank"
               rel="noopener noreferrer"
               class="ext-link"
               >term and conditions</a
             ></label
           >
-          <button type="submit" class="submit-btn">Register</button>
+          <button type="submit" class="submit-btn" onclick="registerSubmit()">
+            Register
+          </button>
         </form>
         <!-- Register form -->
       </div>

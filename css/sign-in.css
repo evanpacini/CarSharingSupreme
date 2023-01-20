@@ -4,6 +4,21 @@ footer {
     margin-top: 0;
 }
 
+
+/* This requires some more styling, but it's a start. */
+#tracking-data {
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    background-color: var(--surface);
+    color: var(--on-surface);
+    font: inherit;
+    padding: 1vh 1vw 1vh 1vw;
+    border: var(--on-surface) 1px solid;
+    border-radius: 5px;
+    visibility: hidden;
+}
+
 .sign-in {
     height: 100%;
     width: auto;
@@ -83,12 +98,6 @@ form {
     padding: 1.5em;
     border-radius: 5px;
     background-color: var(--surface);
-}
-
-#ext-link {
-    height: 1em;
-    width: 1em;
-    fill: var(--on-surface);
 }
 
 .remember {
