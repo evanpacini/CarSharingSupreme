@@ -35,7 +35,7 @@ let timeStampEntered = Date.now();
 let trackingDataSection = document.getElementById("tracking-data");
 
 // Get all input fields which we want to track
-let countInputs = document.getElementsByClassName("count-characters");
+let countInputs = registerForm.getElementsByClassName("count-characters");
 
 // Increment the number of clicks when the user clicks on the page
 function incClicks() {
