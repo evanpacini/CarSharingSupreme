@@ -101,7 +101,11 @@ footer .github {
     padding: 1vh 0 1vh 0;
 }
 
-footer svg {
+footer .github a::after {
+    display: inline-block;
+    content: "";
+    margin-left: 0.5em;
+    background-image: url(../images/github.svg);
     height: 1em;
     width: 1em;
     fill: var(--on-primary);
