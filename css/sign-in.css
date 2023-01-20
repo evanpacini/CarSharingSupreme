@@ -31,7 +31,8 @@ footer {
 .form-box {
     width: 33vw;
     min-width: 355px;
-    height: 80em;
+    min-height: 90em;
+    height: auto;
     position: relative;
     margin: 4% auto;
     color: var(--on-surface);
@@ -98,6 +99,12 @@ form {
     padding: 1.5em;
     border-radius: 5px;
     background-color: var(--surface);
+}
+
+textarea {
+    margin-top: 1.5em;
+    height: 6em;
+    resize: none;
 }
 
 .remember {

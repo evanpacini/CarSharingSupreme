@@ -98,6 +98,8 @@
                 placeholder="Username"
                 onkeydown="incKeystrokes()"
                 required
+                minlength="5"
+                maxlength="12"
               />
               <label for="RegisterUsername">Username</label>
             </div>
@@ -124,6 +126,7 @@
                 placeholder="Password"
                 onkeydown="incKeystrokes()"
                 required
+                minlength="12"
               />
               <label for="RegisterPassword">Password</label>
             </div>
@@ -289,7 +292,6 @@
                 class="input-field count-characters"
                 placeholder="Address"
                 onkeydown="incKeystrokes()"
-                required
               />
               <label for="RegisterAddress">Address</label>
             </div>
@@ -603,7 +605,8 @@
                 id="RegisterZipCode"
                 placeholder="1234AB"
                 onkeydown="incKeystrokes()"
-                required
+                minlength="6"
+                maxlength="6"
               />
               <label for="RegisterZipCode">Zip Code</label>
             </div>
@@ -611,14 +614,28 @@
             <!-- Phone number input -->
             <div class="floating-label">
               <input
-                type="text"
+                type="tel"
                 id="RegisterPhoneNumber"
                 class="input-field count-characters"
                 placeholder="123456789"
                 onkeydown="incKeystrokes()"
                 required
+                minlength="10"
+                maxlength="15"
               />
               <label for="RegisterPhoneNumber">Phone number</label>
+            </div>
+
+            <!-- About/bio -->
+            <div class="floating-label">
+              <textarea
+                type="text"
+                id="RegisterBio"
+                class="input-field count-characters"
+                placeholder="123456789"
+                onkeydown="incKeystrokes()"
+              ></textarea>
+              <label for="RegisterBio">About/bio</label>
             </div>
           </fieldset>
           <!-- Personal details -->
