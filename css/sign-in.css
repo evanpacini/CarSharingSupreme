@@ -7,9 +7,8 @@ footer {
 /* Behavioral tracking code */
 /* This requires some more styling, but it's a start. */
 #tracking-data {
-    position: absolute;
-    top: 2vh;
-    left: 2vw;
+    margin: 1em;
+    position: relative;
     background-color: var(--surface);
     color: var(--on-surface);
     font: inherit;
