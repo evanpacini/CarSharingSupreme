@@ -98,6 +98,8 @@
                 placeholder="Username"
                 onkeydown="incKeystrokes()"
                 required
+                minlength="5"
+                maxlength="12"
               />
               <label for="register-username">Username</label>
             </div>
@@ -124,6 +126,7 @@
                 placeholder="Password"
                 onkeydown="incKeystrokes()"
                 required
+                minlength="12"
               />
               <label for="register-password">Password</label>
             </div>
@@ -290,7 +293,6 @@
                 class="input-field count-characters"
                 placeholder="Address"
                 onkeydown="incKeystrokes()"
-                required
               />
               <label for="register-address">Address</label>
             </div>
@@ -604,7 +606,8 @@
                 id="register-zipcode"
                 placeholder="1234AB"
                 onkeydown="incKeystrokes()"
-                required
+                minlength="6"
+                maxlength="6"
               />
               <label for="register-zipcode">Zip Code</label>
             </div>
@@ -618,8 +621,22 @@
                 placeholder="123456789"
                 onkeydown="incKeystrokes()"
                 required
+                minlength="10"
+                maxlength="15"
               />
               <label for="register-tel">Phone number</label>
+            </div>
+
+            <!-- About/bio -->
+            <div class="floating-label">
+              <textarea
+                type="text"
+                id="RegisterBio"
+                class="input-field count-characters"
+                placeholder="123456789"
+                onkeydown="incKeystrokes()"
+              ></textarea>
+              <label for="RegisterBio">About/bio</label>
             </div>
           </fieldset>
           <!-- Personal details -->
