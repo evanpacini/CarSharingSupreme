@@ -22,7 +22,7 @@ function login() {
   registerBtn.style.color = "var(--on-surface)";
 }
 
-// The following code is used to track user behavior on the sign-in page
+// Behavioral tracking code
 
 // Initialize the counters
 var numberOfClicks = 0;
@@ -78,3 +78,5 @@ function registerSubmit() {
     countTotalTypedCharacters();
   trackingDataSection.style.visibility = "visible";
 }
+
+// End of behavioral tracking code

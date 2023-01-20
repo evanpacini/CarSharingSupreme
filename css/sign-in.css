@@ -4,7 +4,7 @@ footer {
     margin-top: 0;
 }
 
-
+/* Behavioral tracking code */
 /* This requires some more styling, but it's a start. */
 #tracking-data {
     position: absolute;
@@ -18,6 +18,7 @@ footer {
     border-radius: 5px;
     visibility: hidden;
 }
+/* End of behavioral tracking code */
 
 .sign-in {
     height: 100%;
