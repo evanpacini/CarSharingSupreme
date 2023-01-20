@@ -50,7 +50,6 @@
               id="login-email"
               class="input-field"
               placeholder="Email"
-              onkeydown="incKeystrokes()"
               required
             />
             <label for="login-email">Email</label>
@@ -61,7 +60,6 @@
               id="login-password"
               class="input-field"
               placeholder="Password"
-              onkeydown="incKeystrokes()"
               required
             />
             <label for="login-password">Password</label>
@@ -96,6 +94,7 @@
                 class="input-field count-characters"
                 id="register-username"
                 placeholder="Username"
+                title="Must be of length 5 to 12, must start with a capital letter and end with a number or special character."
                 onkeydown="incKeystrokes()"
                 required
                 minlength="5"
@@ -111,6 +110,7 @@
                 id="register-email"
                 class="input-field count-characters"
                 placeholder="name@example.com"
+                title="example@joe.mama.is.so..."
                 onkeydown="incKeystrokes()"
                 required
               />
@@ -124,6 +124,7 @@
                 id="register-password"
                 class="input-field count-characters"
                 placeholder="Password"
+                title="At least 12 characters long, but 14 or more is better. A combination of uppercase letters, lowercase letters, numbers, and symbols."
                 onkeydown="incKeystrokes()"
                 required
                 minlength="12"
@@ -144,6 +145,7 @@
                   class="input-field count-characters"
                   id="register-firstname"
                   placeholder="John"
+                  title="Must contain the alphabet only."
                   onkeydown="incKeystrokes()"
                   required
                 />
@@ -155,6 +157,7 @@
                   class="input-field count-characters"
                   id="register-lastname"
                   placeholder="Doe"
+                  title="Must contain the alphabet only."
                   onkeydown="incKeystrokes()"
                   required
                 />
@@ -279,6 +282,7 @@
                 id="register-dob"
                 class="input-field"
                 placeholder="Date of birth"
+                title=""
                 onkeydown="incKeystrokes()"
                 required
               />
@@ -292,6 +296,7 @@
                 id="register-address"
                 class="input-field count-characters"
                 placeholder="Address"
+                title="123 Silly Street Goofy Town, Laughing Province"
                 onkeydown="incKeystrokes()"
               />
               <label for="register-address">Address</label>
@@ -605,6 +610,7 @@
                 class="input-field count-characters"
                 id="register-zipcode"
                 placeholder="1234AB"
+                title="Must be a valid Dutch zipcode, e.g. 1234AB or 1234 AB"
                 onkeydown="incKeystrokes()"
                 minlength="6"
                 maxlength="6"
@@ -619,6 +625,7 @@
                 id="register-tel"
                 class="input-field count-characters"
                 placeholder="123456789"
+                title="E.164 formatting. e.g. +31696969420"
                 onkeydown="incKeystrokes()"
                 required
                 minlength="10"
@@ -631,12 +638,13 @@
             <div class="floating-label">
               <textarea
                 type="text"
-                id="RegisterBio"
+                id="register-bio"
                 class="input-field count-characters"
-                placeholder="123456789"
+                placeholder="Meet John Doe, a man of many talents including getting lost in his own neighborhood and burning water. In his spare time, he enjoys long naps and pretending to understand sports. He's also been known to make a mean grilled cheese sandwich, but don't tell his mom we said that."
+                title="Meet John Doe, a man of many talents including getting lost in his own neighborhood and burning water. In his spare time, he enjoys long naps and pretending to understand sports. He's also been known to make a mean grilled cheese sandwich, but don't tell his mom we said that."
                 onkeydown="incKeystrokes()"
               ></textarea>
-              <label for="RegisterBio">About/bio</label>
+              <label for="register-bio">About/bio</label>
             </div>
           </fieldset>
           <!-- Personal details -->
@@ -652,6 +660,7 @@
                 id="register-licensetype"
                 class="input-field count-characters"
                 placeholder="A"
+                title="One valid licence type. E.g. B or B+ or C1 or T or DE"
                 onkeydown="incKeystrokes()"
               />
               <label for="register-licensetype">License Type</label>
@@ -688,20 +697,9 @@
       <!-- Github -->
       <div class="github">
         <!-- Kasper -->
-        <a href="https://github.com/kaspervanm"
-          ><svg xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-            /></svg
-        ></a>
+        <a href="https://github.com/kaspervanm"></a>
         <!-- Evan -->
-        <a href="https://github.com/evanpacini"
-          ><svg xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-            />
-          </svg>
-        </a>
+        <a href="https://github.com/evanpacini"></a>
       </div>
       <!-- Github -->
 
