@@ -98,9 +98,12 @@
                 placeholder="Username"
                 onkeydown="incKeystrokes()"
                 required
-                minlength="5"
-                maxlength="12"
+                pattern="^[A-Z].{3,10}[\W\d_]$"
               />
+              <!--
+                Username must start with a capital letter, be between 5 and 12 characters long and end with a number or special character 
+                [\W\d_] is used to match special characters and numbers, since \W matches all non-word characters, including underscore
+              -->
               <label for="register-username">Username</label>
             </div>
 
@@ -113,7 +116,14 @@
                 placeholder="name@example.com"
                 onkeydown="incKeystrokes()"
                 required
+                pattern=".+@.+"
               />
+              <!-- 
+                .+@.+ is a very basic regex to check if the email contains an '@' character.
+                Anything more complex could cause unwanted behaviour including false positives and negatives.
+                Email validation using regex is a malpractice, but it's just for the sake of the exercise 
+                We did not force a '.' followed by a domain name, since it's not always the case (IPV6 addresses, for example)
+              -->
               <label for="register-email">Email</label>
             </div>
 
@@ -126,8 +136,13 @@
                 placeholder="Password"
                 onkeydown="incKeystrokes()"
                 required
-                minlength="12"
+                pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\W_]).{12,}"
               />
+              <!-- 
+                Password must contain at least 12 characters, 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character 
+                We use positive lookahead to check if the password contains at least one of each character type
+                [\W_] is used to match special characters, since \W matches all non-word characters, including underscore
+              -->
               <label for="register-password">Password</label>
             </div>
           </fieldset>
@@ -146,7 +161,14 @@
                   placeholder="John"
                   onkeydown="incKeystrokes()"
                   required
+                  pattern="^(?!.*[\u00d7\u00f7])[a-zA-Z\u00C0-\u024F]+$"
                 />
+                <!--
+                    We consider "the alphabet" to be the letters A-Z, a-z and accented characters of the latin alphabet
+                    First name must contain only letters and must not contain the multiplication and division symbols
+                    [\u00d7\u00f7] is used to match the multiplication and division symbols
+                    [a-zA-Z\u00C0-\u024F] is used to match letters, including accented characters
+                -->
                 <label for="register-firstname">First Name</label>
               </div>
               <div class="floating-label">
@@ -157,7 +179,14 @@
                   placeholder="Doe"
                   onkeydown="incKeystrokes()"
                   required
+                  pattern="^(?!.*[\u00d7\u00f7])[a-zA-Z\u00C0-\u024F]+$"
                 />
+                <!--
+                      We consider "the alphabet" to be the letters A-Z, a-z and accented characters of the latin alphabet
+                      First name must contain only letters and must not contain the multiplication and division symbols
+                      [\u00d7\u00f7] is used to match the multiplication and division symbols
+                      [a-zA-Z\u00C0-\u024F] is used to match letters, including accented characters
+                  -->
                 <label for="register-lastname">Last Name</label>
               </div>
             </div>
@@ -606,9 +635,9 @@
                 id="register-zipcode"
                 placeholder="1234AB"
                 onkeydown="incKeystrokes()"
-                minlength="6"
-                maxlength="6"
+                pattern="^[1-9]\d{3}\s?[a-zA-Z]{2}$"
               />
+              <!-- Dutch postal code (with or without space between digits and letters) -->
               <label for="register-zipcode">Zip Code</label>
             </div>
 
@@ -621,9 +650,9 @@
                 placeholder="123456789"
                 onkeydown="incKeystrokes()"
                 required
-                minlength="10"
-                maxlength="15"
+                pattern="\+\d{10,15}"
               />
+              <!-- Following E.164 Formatting -->
               <label for="register-tel">Phone number</label>
             </div>
 
@@ -653,7 +682,12 @@
                 class="input-field count-characters"
                 placeholder="A"
                 onkeydown="incKeystrokes()"
+                pattern="^([Aa][12Mm]?)|([Bb][+Ee]?)|([CDcd][1Ee]?)|([CDcd]1[Ee])|[Tt]$"
               />
+              <!-- 
+                Should only match the following license types:
+                https://expatinfoholland.nl/help-guides/transport-mobility/driving-license-requirements-in-the-netherlands/
+              -->
               <label for="register-licensetype">License Type</label>
             </div>
             <!-- Driver license picture input -->
