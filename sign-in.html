@@ -91,14 +91,13 @@
             <div class="floating-label">
               <input
                 type="text"
-                class="input-field count-characters"
+                class="required input-field count-characters"
                 id="register-username"
                 placeholder="Username"
                 title="Must be of length 5 to 12, must start with a capital letter and end with a number or special character."
                 onkeydown="incKeystrokes()"
-                required
-                minlength="5"
-                maxlength="12"
+                onkeyup="setCustomValidity(usernameValidity(this))"
+                onsubmit="alert(69)"
               />
               <label for="register-username">Username</label>
             </div>
@@ -106,13 +105,12 @@
             <!-- Email input -->
             <div class="floating-label">
               <input
-                type="email"
+                type="text"
                 id="register-email"
-                class="input-field count-characters"
+                class="required input-field count-characters"
                 placeholder="name@example.com"
                 title="example@joe.mama.is.so..."
                 onkeydown="incKeystrokes()"
-                required
               />
               <label for="register-email">Email</label>
             </div>
@@ -122,12 +120,10 @@
               <input
                 type="password"
                 id="register-password"
-                class="input-field count-characters"
+                class="required input-field count-characters"
                 placeholder="Password"
                 title="At least 12 characters long, but 14 or more is better. A combination of uppercase letters, lowercase letters, numbers, and symbols."
                 onkeydown="incKeystrokes()"
-                required
-                minlength="12"
               />
               <label for="register-password">Password</label>
             </div>
@@ -142,24 +138,22 @@
               <div class="floating-label">
                 <input
                   type="text"
-                  class="input-field count-characters"
+                  class="required input-field count-characters"
                   id="register-firstname"
                   placeholder="John"
                   title="Must contain the alphabet only."
                   onkeydown="incKeystrokes()"
-                  required
                 />
                 <label for="register-firstname">First Name</label>
               </div>
               <div class="floating-label">
                 <input
                   type="text"
-                  class="input-field count-characters"
+                  class="required input-field count-characters"
                   id="register-lastname"
                   placeholder="Doe"
                   title="Must contain the alphabet only."
                   onkeydown="incKeystrokes()"
-                  required
                 />
                 <label for="register-lastname">Last Name</label>
               </div>
@@ -167,7 +161,7 @@
 
             <!-- Gender and language input -->
             <label for="register-gender">Gender</label>
-            <select class="form-select" id="register-gender" required>
+            <select class="required form-select" id="register-gender">
               <option selected>Other</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -176,7 +170,7 @@
             </select>
             <br />
             <label for="register-language">Language</label>
-            <select class="form-select" id="register-language" required>
+            <select class="required form-select" id="register-language">
               <option>Afrikaans</option>
               <option>Albanian</option>
               <option>Amharic</option>
@@ -280,11 +274,10 @@
               <input
                 type="date"
                 id="register-dob"
-                class="input-field"
+                class="required input-field"
                 placeholder="Date of birth"
                 title=""
                 onkeydown="incKeystrokes()"
-                required
               />
               <label for="register-dob">Date of birth</label>
             </div>
@@ -294,7 +287,7 @@
               <input
                 type="text"
                 id="register-address"
-                class="input-field count-characters"
+                class="required input-field count-characters"
                 placeholder="Address"
                 title="123 Silly Street Goofy Town, Laughing Province"
                 onkeydown="incKeystrokes()"
@@ -304,7 +297,7 @@
 
             <!-- Country and zipcode input -->
             <label for="register-country">Country</label>
-            <select class="form-select" id="register-country" required>
+            <select class="required form-select" id="register-country">
               <option value="Afghanistan">Afghanistan</option>
               <option value="Åland Islands">Åland Islands</option>
               <option value="Albania">Albania</option>
@@ -445,23 +438,7 @@
               </option>
               <option value="Korea, Republic of">Korea, Republic of</option>
               <option value="Kuwait">Kuwait</option>
-              <option value="Kyrgyzstan">Kyrgyzstan</option>
-              <option value="Lao People's Democratic Republic">
-                Lao People's Democratic Republic
-              </option>
-              <option value="Latvia">Latvia</option>
-              <option value="Lebanon">Lebanon</option>
-              <option value="Lesotho">Lesotho</option>
-              <option value="Liberia">Liberia</option>
-              <option value="Libyan Arab Jamahiriya">
-                Libyan Arab Jamahiriya
-              </option>
-              <option value="Liechtenstein">Liechtenstein</option>
-              <option value="Lithuania">Lithuania</option>
-              <option value="Luxembourg">Luxembourg</option>
-              <option value="Macao">Macao</option>
-              <option value="Macedonia, The Former Yugoslav Republic of">
-                Macedonia, The Former Yugoslav Republic of
+              <option value="Kyrgyemailrmer Yugoslav Republic of
               </option>
               <option value="Madagascar">Madagascar</option>
               <option value="Malawi">Malawi</option>
@@ -491,20 +468,7 @@
               <option value="Nepal">Nepal</option>
               <option selected value="Netherlands">Netherlands</option>
               <option value="Netherlands Antilles">Netherlands Antilles</option>
-              <option value="New Caledonia">New Caledonia</option>
-              <option value="New Zealand">New Zealand</option>
-              <option value="Nicaragua">Nicaragua</option>
-              <option value="Niger">Niger</option>
-              <option value="Nigeria">Nigeria</option>
-              <option value="Niue">Niue</option>
-              <option value="Norfolk Island">Norfolk Island</option>
-              <option value="Northern Mariana Islands">
-                Northern Mariana Islands
-              </option>
-              <option value="Norway">Norway</option>
-              <option value="Oman">Oman</option>
-              <option value="Pakistan">Pakistan</option>
-              <option value="Palau">Palau</option>
+              <option value="New Caemail">Palau</option>
               <option value="Palestinian Territory, Occupied">
                 Palestinian Territory, Occupied
               </option>
@@ -607,13 +571,11 @@
             <div class="floating-label">
               <input
                 type="text"
-                class="input-field count-characters"
+                class="required input-field count-characters"
                 id="register-zipcode"
                 placeholder="1234AB"
                 title="Must be a valid Dutch zipcode, e.g. 1234AB or 1234 AB"
                 onkeydown="incKeystrokes()"
-                minlength="6"
-                maxlength="6"
               />
               <label for="register-zipcode">Zip Code</label>
             </div>
@@ -623,13 +585,10 @@
               <input
                 type="tel"
                 id="register-tel"
-                class="input-field count-characters"
+                class="required input-field count-characters"
                 placeholder="123456789"
                 title="E.164 formatting. e.g. +31696969420"
                 onkeydown="incKeystrokes()"
-                required
-                minlength="10"
-                maxlength="15"
               />
               <label for="register-tel">Phone number</label>
             </div>
@@ -639,7 +598,7 @@
               <textarea
                 type="text"
                 id="register-bio"
-                class="input-field count-characters"
+                class="required input-field count-characters"
                 placeholder="Meet John Doe, a man of many talents including getting lost in his own neighborhood and burning water. In his spare time, he enjoys long naps and pretending to understand sports. He's also been known to make a mean grilled cheese sandwich, but don't tell his mom we said that."
                 title="Meet John Doe, a man of many talents including getting lost in his own neighborhood and burning water. In his spare time, he enjoys long naps and pretending to understand sports. He's also been known to make a mean grilled cheese sandwich, but don't tell his mom we said that."
                 onkeydown="incKeystrokes()"
@@ -658,7 +617,7 @@
               <input
                 type="text"
                 id="register-licensetype"
-                class="input-field count-characters"
+                class="required input-field count-characters"
                 placeholder="A"
                 title="One valid licence type. E.g. B or B+ or C1 or T or DE"
                 onkeydown="incKeystrokes()"
@@ -669,11 +628,11 @@
             <label for="register-license"
               >Upload a picture of your driver's license</label
             >
-            <input class="input-field" type="file" id="register-license" />
+            <input class="required input-field" type="file" id="register-license" />
           </fieldset>
 
           <!-- Checkbox -->
-          <input type="checkbox" id="register-terms" required />
+          <input class="required" type="checkbox" id="register-terms" />
           <label for="register-terms"
             >I have read and agree to the
             <a
@@ -684,7 +643,7 @@
               >term and conditions</a
             ></label
           >
-          <button type="submit" class="submit-btn" onclick="registerSubmit()">
+          <button type="button" class="submit-btn" onclick="registerSubmit()">
             Register
           </button>
         </form>

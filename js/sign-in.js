@@ -77,6 +77,111 @@ function registerSubmit() {
     "\nTotal number of characters typed: " +
     countTotalTypedCharacters();
   trackingDataSection.style.visibility = "visible";
+
+  // Initiate the validity checking
+  let checks = registerForm.getElementsByTagName("input");
+  for (let i = 0; i < checks.length; i++) {
+    checks[i].setCustomValidity(checkValidity(checks[i]));
+    checks[i].reportValidity();
+  }
+  registerForm.submit();
 }
 
 // End of behavioral tracking code
+
+
+// Validity checking
+
+function isUpperCase(char) {
+  return (char === char.toUpperCase() && char !== char.toLowerCase());
+}
+
+function isSpecialCharOrNumber(char) {
+  return (char.toUpperCase() === char.toLowerCase());
+}
+
+function isNumber(char) {
+
+}
+
+function checkValidity(input) {
+  alert(input.id);
+  if (input.classList.includes("required") && input.value.length === 0) return "This field is required.";
+  switch (input.id) {
+    case "register-username": return usernameValidity(input.value);
+    case "register-email": return emailValidity(input.value);
+    case "register-password": return passwordValidity(input.value);
+    case "register-firstname": return firstnameValidity(input.value);
+    case "register-lastname": return lastnameValidity(input.value);
+    case "register-gender": return genderValidity(input.value);
+    case "register-language": return languageValidity(input.value);
+    case "register-dob": return dobValidity(input.value);
+    case "register-address": return "";
+    case "register-country": return countryValidity(input.value);
+    case "register-zipcode": return zipcodeValidity(input.value);
+    case "register-tel": return telValidity(input.value);
+    case "register-bio": return "";
+    case "register-licensetype": return licensetypeValidity(input.value);
+    case "register-license": return licenseValidity(input.value);
+    case "register-terms": return termsValidity(input.value);
+  }
+}
+
+function usernameValidity(txt) {
+  if (!isUpperCase(txt.charAt(0))) return "First character must be a capital letter.";
+  if (txt.length < 5 || txt.length > 12) return "The username must be of length 5 to 12.";
+  if (!isSpecialCharOrNumber(txt.charAt(txt.length - 1))) return "Last character must be a number or special character.";
+  return "";
+}
+
+function emailValidity(txt) {
+  return "";
+}
+
+function passwordValidity(txt) {
+  return "";
+}
+
+function firstnameValidity(txt) {
+  return "";
+}
+
+function lastnameValidity(txt) {
+  return "";
+}
+
+function genderValidity(txt) {
+  return "";
+}
+
+function languageValidity(txt) {
+  return "";
+}
+
+function dobValidity(txt) {
+  return "";
+}
+
+function countryValidity(txt) {
+  return "";
+}
+
+function zipcodeValidity(txt) {
+  return "";
+}
+
+function telValidity(txt) {
+  return "";
+}
+
+function licensetypeValidity(txt) {
+  return "";
+}
+
+function licenseValidity(txt) {
+  return "";
+}
+
+function termsValidity(txt) {
+  return "";
+}
