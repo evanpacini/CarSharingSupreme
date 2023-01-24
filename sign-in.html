@@ -83,21 +83,20 @@
 
         <!-- Register form -->
         <!-- Prevent form from reloading page -->
-        <form id="register" action="javascript:void(0);">
+        <form id="register" action="javascript:void(0);" method="get">
           <!-- Login details -->
           <fieldset>
             <legend>Login details</legend>
             <!-- Username input -->
             <div class="floating-label">
               <input
+                name="username"
                 type="text"
                 class="required input-field count-characters"
                 id="register-username"
                 placeholder="Username"
                 title="Must be of length 5 to 12, must start with a capital letter and end with a number or special character."
                 onkeydown="incKeystrokes()"
-                onkeyup="setCustomValidity(usernameValidity(this))"
-                onsubmit="alert(69)"
               />
               <label for="register-username">Username</label>
             </div>
@@ -105,6 +104,7 @@
             <!-- Email input -->
             <div class="floating-label">
               <input
+                name="email"
                 type="text"
                 id="register-email"
                 class="required input-field count-characters"
@@ -118,6 +118,7 @@
             <!-- Password input -->
             <div class="floating-label">
               <input
+                name="password"
                 type="password"
                 id="register-password"
                 class="required input-field count-characters"
@@ -137,6 +138,7 @@
             <div class="name">
               <div class="floating-label">
                 <input
+                  name="firstname"
                   type="text"
                   class="required input-field count-characters"
                   id="register-firstname"
@@ -148,6 +150,7 @@
               </div>
               <div class="floating-label">
                 <input
+                  name="lastname"
                   type="text"
                   class="required input-field count-characters"
                   id="register-lastname"
@@ -161,7 +164,7 @@
 
             <!-- Gender and language input -->
             <label for="register-gender">Gender</label>
-            <select class="required form-select" id="register-gender">
+            <select name="gender" class="required form-select" id="register-gender">
               <option selected>Other</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -170,7 +173,7 @@
             </select>
             <br />
             <label for="register-language">Language</label>
-            <select class="required form-select" id="register-language">
+            <select name="language"class="required form-select" id="register-language">
               <option>Afrikaans</option>
               <option>Albanian</option>
               <option>Amharic</option>
@@ -272,6 +275,7 @@
             <!-- Date of birth input -->
             <div class="floating-label">
               <input
+                name="dob"
                 type="date"
                 id="register-dob"
                 class="required input-field"
@@ -285,6 +289,7 @@
             <!-- Address input -->
             <div class="floating-label">
               <input
+                name="address"
                 type="text"
                 id="register-address"
                 class="required input-field count-characters"
@@ -297,7 +302,7 @@
 
             <!-- Country and zipcode input -->
             <label for="register-country">Country</label>
-            <select class="required form-select" id="register-country">
+            <select name="country" class="required form-select" id="register-country">
               <option value="Afghanistan">Afghanistan</option>
               <option value="Åland Islands">Åland Islands</option>
               <option value="Albania">Albania</option>
@@ -570,6 +575,7 @@
             </select>
             <div class="floating-label">
               <input
+                name="zipcode"
                 type="text"
                 class="required input-field count-characters"
                 id="register-zipcode"
@@ -583,6 +589,7 @@
             <!-- Phone number input -->
             <div class="floating-label">
               <input
+                name="tel"
                 type="tel"
                 id="register-tel"
                 class="required input-field count-characters"
@@ -596,9 +603,10 @@
             <!-- About/bio -->
             <div class="floating-label">
               <textarea
+                name="bio"
                 type="text"
                 id="register-bio"
-                class="required input-field count-characters"
+                class="input-field count-characters"
                 placeholder="Meet John Doe, a man of many talents including getting lost in his own neighborhood and burning water. In his spare time, he enjoys long naps and pretending to understand sports. He's also been known to make a mean grilled cheese sandwich, but don't tell his mom we said that."
                 title="Meet John Doe, a man of many talents including getting lost in his own neighborhood and burning water. In his spare time, he enjoys long naps and pretending to understand sports. He's also been known to make a mean grilled cheese sandwich, but don't tell his mom we said that."
                 onkeydown="incKeystrokes()"
@@ -615,9 +623,10 @@
             <!-- Driver license type input -->
             <div class="floating-label">
               <input
+                name="licencetype"
                 type="text"
                 id="register-licensetype"
-                class="required input-field count-characters"
+                class="input-field count-characters"
                 placeholder="A"
                 title="One valid licence type. E.g. B or B+ or C1 or T or DE"
                 onkeydown="incKeystrokes()"
@@ -628,11 +637,11 @@
             <label for="register-license"
               >Upload a picture of your driver's license</label
             >
-            <input class="required input-field" type="file" id="register-license" />
+            <input name="licence" class="input-field" type="file" id="register-license" />
           </fieldset>
 
           <!-- Checkbox -->
-          <input class="required" type="checkbox" id="register-terms" />
+          <input name="terms" class="required" type="checkbox" id="register-terms" />
           <label for="register-terms"
             >I have read and agree to the
             <a
@@ -642,7 +651,7 @@
               class="ext-link"
               >term and conditions</a
             ></label
-          >
+          > 
           <button type="button" class="submit-btn" onclick="registerSubmit()">
             Register
           </button>
