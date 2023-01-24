@@ -101,7 +101,7 @@ function isSpecialCharOrNumber(char) {
 }
 
 function isNumber(char) {
-
+  return (char.trim() !== '' && !isNaN(char));
 }
 
 function checkValidity(input) {
@@ -111,19 +111,14 @@ function checkValidity(input) {
     case "register-username": return usernameValidity(input.value);
     case "register-email": return emailValidity(input.value);
     case "register-password": return passwordValidity(input.value);
-    case "register-firstname": return firstnameValidity(input.value);
-    case "register-lastname": return lastnameValidity(input.value);
-    case "register-gender": return genderValidity(input.value);
-    case "register-language": return languageValidity(input.value);
-    case "register-dob": return dobValidity(input.value);
-    case "register-address": return "";
-    case "register-country": return countryValidity(input.value);
+    case "register-firstname": return nameValidity(input.value);
+    case "register-lastname": return nameValidity(input.value);
     case "register-zipcode": return zipcodeValidity(input.value);
     case "register-tel": return telValidity(input.value);
-    case "register-bio": return "";
     case "register-licensetype": return licensetypeValidity(input.value);
     case "register-license": return licenseValidity(input.value);
     case "register-terms": return termsValidity(input.value);
+    default: return "";
   }
 }
 
@@ -135,6 +130,7 @@ function usernameValidity(txt) {
 }
 
 function emailValidity(txt) {
+  if (!txt.trim().substring(1, txt.trim().length - 2).includes('@')) return "There must be an @ symbol with something before and after it."
   return "";
 }
 
@@ -142,27 +138,8 @@ function passwordValidity(txt) {
   return "";
 }
 
-function firstnameValidity(txt) {
-  return "";
-}
-
-function lastnameValidity(txt) {
-  return "";
-}
-
-function genderValidity(txt) {
-  return "";
-}
-
-function languageValidity(txt) {
-  return "";
-}
-
-function dobValidity(txt) {
-  return "";
-}
-
-function countryValidity(txt) {
+function nameValidity(txt) {
+  if(isSpecialCharOrNumber(txt)) return "Use only letters of the alphabet."
   return "";
 }
 
