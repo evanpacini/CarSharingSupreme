@@ -182,9 +182,10 @@ function nameValidity(txt) {
   return "";
 }
 
-//^[1-9]\d{3}\s?[a-zA-Z]{2}$
 function zipcodeValidity(txt) {
   // Check if the zipcode is a valid dutch zipcode without using regex
+  if (txt.length > 4 && [...txt.substring(0, 4)].filter(isNumber).length < 4)
+    return "The zipcode must start with four digits.";
   switch (txt.length) {
     case 6:
       if ([...txt.substring(4)].filter(isSpecialCharOrNumber).length > 0)
@@ -201,14 +202,14 @@ function zipcodeValidity(txt) {
   }
   if (txt.charAt(0) === "0")
     return "The zipcode must start with a number between 1 and 9.";
-  if ([...txt.substring(0, 4)].filter(isNumber).length < 4)
-    return "The zipcode must start with four digits.";
   return "";
 }
 
 function telValidity(txt) {
   if (txt.charAt(0) !== "+")
     return "The E.164 format requires a + at the start.";
+  if (txt.length > 1 && [...txt.substring(1)].filter(e => !isNumber(e)).length > 0)
+    return "The E.164 format allows only digits after the +.";
   if (txt.length > 16)
     return "The E.164 format disallows phone numbers larger than 15 digits.";
   if (txt.length < 11)
