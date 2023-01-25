@@ -173,7 +173,7 @@ fieldset legend {
   color: var(--secondary);
 }
 
-.floating-label > .input-field:required ~ label::after {
+.floating-label > .input-field:required ~ label::after, .required ~ label::after {
     content: "*";
     color: var(--secondary-variant);
     margin-left: 0.25em;
