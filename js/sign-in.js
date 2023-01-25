@@ -1,11 +1,11 @@
 // Description: This file contains the code for the sign-in page
 
 // These functions are used to toggle between the login and register forms
-let loginForm = document.getElementById("login");
-let registerForm = document.getElementById("register");
-let buttonHighlight = document.getElementById("btn");
-let loginBtn = document.getElementById("login-btn");
-let registerBtn = document.getElementById("register-btn");
+const loginForm = document.getElementById("login");
+const registerForm = document.getElementById("register");
+const buttonHighlight = document.getElementById("btn");
+const loginBtn = document.getElementById("login-btn");
+const registerBtn = document.getElementById("register-btn");
 
 function register() {
   loginForm.style.left = "-200%";
@@ -25,17 +25,17 @@ function login() {
 // Behavioral tracking code
 
 // Initialize the counters
-var numberOfClicks = 0;
-var numberOfKeystrokes = 0;
+let numberOfClicks = 0;
+let numberOfKeystrokes = 0;
 
 // Get the time when the user enters the page
-let timeStampEntered = Date.now();
+const timeStampEntered = Date.now();
 
 // Get the section where we want to display the tracking data
-let trackingDataSection = document.getElementById("tracking-data");
+const trackingDataSection = document.getElementById("tracking-data");
 
 // Get all input fields which we want to track
-let countInputs = registerForm.getElementsByClassName("count-characters");
+const countInputs = registerForm.getElementsByClassName("count-characters");
 
 // Increment the number of clicks when the user clicks on the page
 function incClicks() {
@@ -49,9 +49,9 @@ function incKeystrokes() {
 
 // Count the total number of characters typed in all input fields
 function countTotalTypedCharacters() {
-  var numberOfCharacters = 0;
+  let numberOfCharacters = 0;
   // Loop through all input fields and add the length of the value to the total
-  for (var input = 0; input < countInputs.length; input++) {
+  for (let input = 0; input < countInputs.length; input++) {
     numberOfCharacters += countInputs[input].value.length;
   }
   return numberOfCharacters;
@@ -59,9 +59,9 @@ function countTotalTypedCharacters() {
 
 // Get the time spent on the page as a string
 function getTimeSpent() {
-  let timeSpent = Date.now() - timeStampEntered;
-  let minutes = Math.floor(timeSpent / 60000);
-  let seconds = ((timeSpent % 60000) / 1000).toFixed(0);
+  const timeSpent = Date.now() - timeStampEntered;
+  const minutes = Math.floor(timeSpent / 60000);
+  const seconds = ((timeSpent % 60000) / 1000).toFixed(0);
   return minutes + " minutes and " + seconds + " seconds";
 }
 

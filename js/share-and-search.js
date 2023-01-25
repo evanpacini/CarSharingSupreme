@@ -1,5 +1,5 @@
 function myFunction(id) {
-  let x = document.getElementById(id);
+  const x = document.getElementById(id);
   if (x.className.indexOf("hidden") == -1) {
     x.className += " hidden";
     x.previousElementSibling.className =
